@@ -1,1 +1,19 @@
+Média de frequencia e de nota de aluno 
 
+#include <stdio.h>
+
+int main() {
+    float media,frequencia;
+    printf ("digite media: ");
+    scanf ("%f", &media);
+
+    printf ("digite frequencia: ");
+    scanf ("%f", &frequencia);
+        
+    if (media >= 6.0f && frequencia >= 75.0f) {
+    printf("Aprovado\n");
+} else if (media >= 4.0f && frequencia <= 75.0f) {
+    printf("Exame\n");
+} else {
+    printf("Reprovado\n");
+}
