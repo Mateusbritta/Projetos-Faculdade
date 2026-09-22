@@ -1,4 +1,4 @@
-Média de frequencia e de nota de aluno 
+>>> Média de frequencia e de nota de aluno 
 
 #include <stdio.h>
 
