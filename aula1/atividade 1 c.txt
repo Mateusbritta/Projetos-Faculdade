@@ -1,0 +1,24 @@
+atividade 2
+
+#include <stdio.h>
+
+int main() {
+   int a,b;
+    printf("Digite o Primeiro Valor: \n ");
+    scanf("%d", &a);
+    printf("Digite o segundo valor: \n ");
+    scanf("%d", &b);
+
+
+printf("soma: %d\n",a + b);
+printf("subtracao: %d\n",a - b);
+printf("multiplicacao: %d\n",a * b);
+
+    if (b !=0) {
+    printf("divisao inteira: %d\n", a / b);
+    printf("Resto da divisao: %d\n", a % b);
+           
+    }
+
+    return 0;
+}
