@@ -1,0 +1,62 @@
+alunocreate database ads2026;
+
+use ads2026;
+
+create table professor (
+id int auto_increment primary key,
+nome varchar(120) not null,
+email varchar(120)
+);
+
+create table aluno (
+id int auto_increment primary key,
+nome varchar(120) not null, 
+email varchar(120)
+);
+
+create table turma (
+id int auto_increment primary key,
+idioma varchar (40) not null,
+nivel varchar (20),
+id_professor int,
+foreign key (id_professor) references professor (id)
+);
+
+create table matricula (
+id              int auto_increment primary key,
+id_aluno        int,
+id_turma        int,
+data_matricula  date,
+foreign key (id_aluno) references aluno (id),
+foreign key (id_turma) references turma (id)
+);
+
+insert into professor (nome, email) values
+('Ana Lima', 'ana.lima@escola.com.br'), 
+('Bruno Tavares', 'bruno.tavares@escola.com.br'),
+('Clara Nunes', 'clara.nunes@escola.com.br');
+
+insert into aluno (nome, email) values
+('Daniel Rocha', 'daniel.rocha@email.com'),
+('Elisa Prado', 'daniel.prado@email.com'),
+('Felipe Andrade', 'felipe.andrade@email.com');
+
+insert into turma (idioma,nivel, id_professor) values
+('Ingles', 'basico', 1),
+('Espanhol', 'intermediario', 2),
+('Frances', 'avancado', 3);
+
+insert into matricula (id_aluno, id_turma, data_matricula) values
+(1,4, '2026-02-10'),
+(2,5, '2026-02-12'),
+(3,6, '2026-03-05');
+
+select * from turma;
+select * from matricula;
+drop table turma;
+select matricula.data_matricula, aluno.nome, turma.idioma from matricula
+join aluno on matricula.id_aluno = aluno.id
+join turma on matricula.id_turma = turma.id;
+
+
+
